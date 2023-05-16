@@ -1,0 +1,6 @@
+.env
+.venv
+.vscode
+converter.egg-info
+__pycache__
+

@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=64.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "converter"
+version = "1.0.0"
+
+dependencies = [
+	"fastapi",
+	"uvicorn",
+	"pydantic[email]",
+	"gunicorn",
+	"python-dotenv",
+	"httpx",
+	"python-jose",
+	"sqlalchemy",
+	"psycopg2-binary",
+	"motor",
+]
