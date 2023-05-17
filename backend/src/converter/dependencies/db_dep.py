@@ -16,7 +16,7 @@ def get_postgres_db():
         db.close()
 
 
-class MongoDbCollection:
+class  MongoDbCollection:
     def __init__(self, collection_name: str) -> None:
         self._collection_name = collection_name
         self._db = client_local_mongo[settings.MONGODB_DB_NAME]

@@ -10,6 +10,16 @@ class Settings(BaseSettings):
         case_sensitive = True
 
     MONGODB_DB_NAME: str = "converter"
+    APPLICATION_NAME: str = "video-to-audio"
+
+    # ------------ FileUpload Constants -------------#
+    FILE_UPLOAD_PATH: str = "./temp"
+    FILE_MAX_SIZE: int = 1024 * 1024 * 1024 * 4 #4GB
+    FILE_REQUEST_BODY_MAX_SIZE: int = FILE_MAX_SIZE + 1024
+
+
+    # ------------ AUTH Server URLS ----------#
+    AUTHSERVER_TOKEN_VERIFICATION_URL: AnyUrl = AnyUrl("http://localhost:8000/api/v1/auth/verify-tokens", scheme="http")
 
     # ------------ Connection URI -------------#
     POSTGRES_CONN_URI: AnyUrl

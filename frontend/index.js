@@ -55,9 +55,35 @@ function verifyTokens(access, refresh){
     )
     .then(
         (data) => {
-        console.log(data);
-    })
-    .catch(error => {
-        console.error("Error: ", error)
+        
+        if(data['detail']){
+            window.location.href = "http://localhost:5500/frontend/login.html";
+        }
     })
 }
+
+
+const form = document.querySelector('input[type="file"]');
+
+form.addEventListener('submit', async (event) => {
+    event.preventDefault(); // Prevent default form submission
+
+    const url = 'http://localhost:8001/api/v1/upload-using-fileupload';
+    let formData = new FormData();
+    formData.append('file', form.files[0])
+
+    try {
+      const response = await fetch(url, {
+        method: 'POST',
+        body: formData
+      });
+
+      if (response.ok) {
+        console.log('Video uploaded successfully');
+      } else {
+        console.error('Error uploading:', response.statusText);
+      }
+    } catch (error) {
+      console.error('Error uploading video:', error.message);
+    }
+  });

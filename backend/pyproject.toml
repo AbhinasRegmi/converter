@@ -17,4 +17,6 @@ dependencies = [
 	"sqlalchemy",
 	"psycopg2-binary",
 	"motor",
+	"python-multipart",
+	"streaming-form-data",
 ]
